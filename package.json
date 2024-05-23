@@ -1,0 +1,7 @@
+{
+    "name": "@neuralinterfaces/brainsatplay",
+    "private": true,
+    "workspaces": [
+        "packages/**"
+    ]
+}

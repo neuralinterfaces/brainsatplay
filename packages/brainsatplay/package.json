@@ -1,0 +1,7 @@
+{
+    "name": "brainsatplay",
+    "version": "0.0.0",
+    "dependencies": {
+        "@brainsatplay/muse": "file:../devices/muse"
+    }
+}
