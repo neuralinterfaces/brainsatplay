@@ -70,6 +70,29 @@ export const ppgChannelNames = ['ambient', 'infrared', 'red'];
 // These names match the characteristics defined in EEG_CHARACTERISTICS above
 export const channelNames = ['TP9', 'AF7', 'AF8', 'TP10', 'AUX'];
 
+// JSON Schema for MuseClient options
+export type MuseOptions = {
+    aux?: boolean;
+    ppg?: boolean;
+}
+
+const museOptionsSchema = {
+    properties: {
+        aux: {
+            title: "Auxiliary Channel",
+            type: 'boolean',
+            default: false,
+        },
+        ppg: {
+            title: "PPG Data",
+            type: 'boolean',
+            default: false,
+        },
+    }
+}
+
+
+
 export class MuseClient {
     enableAux = false;
     enablePpg = false;
@@ -90,7 +113,10 @@ export class MuseClient {
     private lastIndex: number | null = null;
     private lastTimestamp: number | null = null;
 
-    constructor({ aux = false, ppg = false } = {}) {
+
+    static schema = museOptionsSchema;
+
+    constructor({ aux = false, ppg = false }: MuseOptions = {}) {
         this.enableAux = aux;
         this.enablePpg = ppg;
     }
