@@ -1,1 +1,1 @@
-export * as muse from '@brainsatplay/muse/src'
+export * as muse from '@brainsatplay/muse'

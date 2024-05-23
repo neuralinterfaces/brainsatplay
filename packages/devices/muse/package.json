@@ -2,8 +2,7 @@
   "name": "muse-capacitor",
   "version": "3.3.0",
   "description": "Muse 2016 EEG Headset JavaScript Library",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "src/index.ts",
   "repository": "https://github.com/garrettmflynn/muse-capacitor",
   "author": "Garrett Flynn <garrettmflynn@gmail.com>",
   "contributors": [
