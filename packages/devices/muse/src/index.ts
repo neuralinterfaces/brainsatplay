@@ -70,12 +70,14 @@ export const ppgChannelNames = ['ambient', 'infrared', 'red'];
 // These names match the characteristics defined in EEG_CHARACTERISTICS above
 export const channelNames = ['TP9', 'AF7', 'AF8', 'TP10', 'AUX'];
 
-// JSON Schema for MuseClient options
+// Options for the MuseClient constructor
 export type MuseOptions = {
     aux?: boolean;
     ppg?: boolean;
 }
 
+
+// For UI generation
 const museOptionsSchema = {
     properties: {
         aux: {
