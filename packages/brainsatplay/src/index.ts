@@ -1,4 +1,6 @@
-export * as muse from '@brainsatplay/muse'
+import * as muse from '@brainsatplay/muse'
 
 export * from './types'
 export * from './Device'
+
+export { muse }

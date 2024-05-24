@@ -3,15 +3,7 @@ import dts from "vite-plugin-dts";
 
 export const plugins = [
     dts({
-      insertTypesEntry: true,
+        rollupTypes: true,
+        include: [ "src/**/*.ts"]
     }),
 ]
-
-export const rollupOptions = {
-    external: ["@capacitor/core"],
-    output: {
-        globals: {
-            "@capacitor/core": "Capacitor",
-        },
-    },
-}

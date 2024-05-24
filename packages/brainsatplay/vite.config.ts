@@ -10,6 +10,5 @@ export default defineConfig({
             name: "brainsatplay",
             fileName: (format) => `brainsatplay.${format}.js`,
         },
-        rollupOptions: viteBase.rollupOptions,
     },
 })

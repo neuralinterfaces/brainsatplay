@@ -11,6 +11,5 @@ export default defineConfig({
             name: "muse",
             fileName: (format) => `muse.${format}.js`,
         },
-        rollupOptions: viteBase.rollupOptions,
     },
 })

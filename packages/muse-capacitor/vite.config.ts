@@ -10,6 +10,5 @@ export default defineConfig({
             name: "muse-capacitor",
             fileName: (format) => `muse-capacitor.${format}.js`,
         },
-        rollupOptions: viteBase.rollupOptions,
     },
 })
