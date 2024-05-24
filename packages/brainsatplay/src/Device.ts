@@ -1,4 +1,4 @@
-import { DeviceInfo } from "./types"
+import { DeviceMetadata } from "./types"
 import { formatReading } from "./utils"
 
 type Options = Record<string, any>
@@ -7,15 +7,17 @@ type Subscribers = Record<symbol, any>
 
 export class Device {
 
+    // Schema for UI generation
     static schema: any = {}
 
+    // Connection client
     client?: any
 
+    // Device metadata, tracked before or after connection
+    metadata: any = {}
+
+    // Subscriptions
     #subscribers: Record<string, Subscribers> = {}
-
-    constructor() {
-
-    }
 
     format = formatReading
 
@@ -30,11 +32,7 @@ export class Device {
         Object.getOwnPropertySymbols(this.#subscribers[name]).forEach((id) => this.#subscribers[name][id](reading))
     }
 
-    info = async (): Promise<DeviceInfo> => {
-        return {
-            versions: {}
-        }
-    }
+    info = async (): Promise<DeviceMetadata> => this.metadata
 
     connect = async (options: Options) => {}
 

@@ -4,12 +4,18 @@ import {
     TelemetryData,
     EEGReading,
     PPGReading,
-    AccelerometerData
+    AccelerometerData,
+    EEG_FREQUENCY,
+    PPG_FREQUENCY,
+    ACCELEROMETER_FREQUENCY,
+    EEG_SAMPLES_PER_READING,
+    PPG_SAMPLES_PER_READING,
+    ACCELEROMETER_SAMPLES_PER_READING
 } from 'muse-capacitor'
 
 export * from 'muse-capacitor'
 
-import { Device } from '../../../brainsatplay/src/Device'
+import { Device, DeviceMetadata } from 'brainsatplay'
 
 // Transformation from generic to 10-20 system
 const indexToChannel = (index: number) => {
@@ -42,23 +48,41 @@ export class MuseDevice extends Device {
         }
     }
 
+
+    metadata: DeviceMetadata = {
+        modalities: {
+            eeg: {
+                frequency: EEG_FREQUENCY,
+                samples: EEG_SAMPLES_PER_READING,
+            },
+            ppg: {
+                frequency: PPG_FREQUENCY,
+                samples: PPG_SAMPLES_PER_READING,
+            },
+            acceleration: {
+                frequency: ACCELEROMETER_FREQUENCY,
+                samples: ACCELEROMETER_SAMPLES_PER_READING,
+            }
+        }
+    }
+
     constructor() {
         super()
     }
 
     info = async () => {
 
-        if (!this.client) return Promise.resolve({ versions: {} })
+        const metadata = structuredClone(this.metadata)
 
-        return this.client.deviceInfo().then((info) => {
-            console.warn('Muse Device Info', info)
-            return {
-                versions: {
-                    hardware: info.hw,
-                    firmware: info.fw
-                }
-            }
-        })
+        if (!this.client) return Promise.resolve({ versions: {}, ...metadata })
+
+       const info = await this.client.deviceInfo()
+        metadata.versions ={
+            hardware: info.hw,
+            firmware: info.fw
+        }
+
+        return metadata
 
     }
 
@@ -69,7 +93,7 @@ export class MuseDevice extends Device {
         await this.client.connect();
     
         await this.client.start();
-    
+
         this.client.eegReadings.subscribe(({
             electrode,
             ...reading
@@ -130,5 +154,6 @@ export class MuseDevice extends Device {
                 }))
             })    
         }
+
     }
 }

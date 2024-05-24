@@ -11,7 +11,21 @@ export type Reading = BaseReading & {
     timestamp: { device?: number, local: number }
 }
 
+type ModalityInfo = {
+    frequency: number,
+    samples: number
+}
 
-export type DeviceInfo = {
-    versions: Record<string, string>
+export type DeviceMetadata = {
+    
+    modalities: {
+        eeg?: ModalityInfo,
+        ppg?: ModalityInfo,
+        acceleration?: ModalityInfo,
+    },
+
+    versions?: {
+        hardware?: string,
+        firmware?: string
+    }
 }
