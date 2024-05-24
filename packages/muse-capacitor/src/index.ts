@@ -26,9 +26,8 @@ import {
 
 import { decodeResponse, encodeCommand, startNotifications } from './muse-utils';
 
+// Interfaces
 export {
-
-    // Interfaces
     EEGReading,
     PPGReading,
     TelemetryData,
@@ -71,29 +70,10 @@ export const ppgChannelNames = ['ambient', 'infrared', 'red'];
 export const channelNames = ['TP9', 'AF7', 'AF8', 'TP10', 'AUX'];
 
 // Options for the MuseClient constructor
-export type MuseOptions = {
+export type MuseClientOptions = {
     aux?: boolean;
     ppg?: boolean;
 }
-
-
-// For UI generation
-const museOptionsSchema = {
-    properties: {
-        aux: {
-            title: "Auxiliary Channel",
-            type: 'boolean',
-            default: false,
-        },
-        ppg: {
-            title: "PPG Data",
-            type: 'boolean',
-            default: false,
-        },
-    }
-}
-
-
 
 export class MuseClient {
     enableAux = false;
@@ -115,10 +95,7 @@ export class MuseClient {
     private lastIndex: number | null = null;
     private lastTimestamp: number | null = null;
 
-
-    static schema = museOptionsSchema;
-
-    constructor({ aux = false, ppg = false }: MuseOptions = {}) {
+    constructor({ aux = false, ppg = false }: MuseClientOptions = {}) {
         this.enableAux = aux;
         this.enablePpg = ppg;
     }

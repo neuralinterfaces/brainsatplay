@@ -1,0 +1,18 @@
+{
+  "name": "@brainsatplay/muse",
+  "version": "3.3.0",
+  "description": "Brains@Play Wrapper for the Muse Headband",
+  "main": "src/index.ts",
+  "repository": "https://github.com/garrettmflynn/brainsatplay/packages/@brainsatplay/muse",
+  "author": "Garrett Flynn <garrettmflynn@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "muse-capacitor": "file:../../muse-capacitor"
+  }
+}

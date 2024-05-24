@@ -3,5 +3,11 @@
     "private": true,
     "workspaces": [
         "packages/**"
-    ]
+    ],
+    "scripts": {
+        "build": "lerna run build"
+    },
+    "dependencies": {
+        "lerna": "^8.1.3"
+    }
 }
