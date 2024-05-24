@@ -5,11 +5,6 @@ type Options = Record<string, any>
 
 type Subscribers = Record<symbol, any>
 
-interface Client {
-    connect: (options: Options) => Promise<void>
-    disconnect: () => void
-}
-
 export class Device {
 
     static schema: any = {}
@@ -32,7 +27,7 @@ export class Device {
 
     notify = (name: string, reading: any) => {
         if (!this.#subscribers[name]) return
-        for (const id in this.#subscribers[name]) this.#subscribers[name][id](reading)
+        Object.getOwnPropertySymbols(this.#subscribers[name]).forEach((id) => this.#subscribers[name][id](reading))
     }
 
     info = async (): Promise<DeviceInfo> => {

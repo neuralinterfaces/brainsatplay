@@ -9,7 +9,7 @@ import {
 
 export * from 'muse-capacitor'
 
-import { Device } from 'brainsatplay'
+import { Device } from '../../../brainsatplay/src/Device'
 
 // Transformation from generic to 10-20 system
 const indexToChannel = (index: number) => {
@@ -51,7 +51,7 @@ export class MuseDevice extends Device {
         if (!this.client) return Promise.resolve({ versions: {} })
 
         return this.client.deviceInfo().then((info) => {
-            console.warn('info', info)
+            console.warn('Muse Device Info', info)
             return {
                 versions: {
                     hardware: info.hw,
@@ -64,13 +64,13 @@ export class MuseDevice extends Device {
 
     connect = async ( options: MuseClientOptions ) => {
 
-        const client = new MuseClient(options);
+        this.client = new MuseClient(options);
 
-        await client.connect();
+        await this.client.connect();
     
-        await client.start();
+        await this.client.start();
     
-        client.eegReadings.subscribe(({
+        this.client.eegReadings.subscribe(({
             electrode,
             ...reading
         }: EEGReading) => {
@@ -82,7 +82,7 @@ export class MuseDevice extends Device {
     
         });
     
-        client.telemetryData.subscribe(({
+        this.client.telemetryData.subscribe(({
             sequenceId,
             ...telemetry
         }: TelemetryData) => {
@@ -100,7 +100,7 @@ export class MuseDevice extends Device {
             }
         });
     
-        client.accelerometerData.subscribe((acceleration: AccelerometerData) => {
+        this.client.accelerometerData.subscribe((acceleration: AccelerometerData) => {
     
             const { samples, sequenceId } = acceleration
     
@@ -117,9 +117,9 @@ export class MuseDevice extends Device {
             })
         });
     
-        if (client.ppgReadings) {
+        if (this.client.ppgReadings) {
     
-            client.ppgReadings.subscribe(({
+            this.client.ppgReadings.subscribe(({
                 ppgChannel,
                 ...reading
             }: PPGReading) => {

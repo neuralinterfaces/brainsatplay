@@ -4,8 +4,8 @@ node_modules
 
 *.log
 
-# Commoners
-.commoners
+# Build
+dist
 
 # To Ignore
 old

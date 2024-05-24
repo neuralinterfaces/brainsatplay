@@ -1,11 +1,13 @@
 {
     "name": "brainsatplay",
-    "version": "0.0.0",
-    "main": "src/index.ts",
+    "version": "0.0.1",
+    "main": "dist/brainsatplay.umd.js",
+    "module": "dist/brainsatplay.es.js",
+    "types": "dist/brainsatplay.d.ts",
     "scripts": {
         "build": "vite build"
     },
     "dependencies": {
-        "@brainsatplay/muse": "file:../@brainsatplay/muse"
+        "@brainsatplay/muse": "0.0.1"
     }
 }
