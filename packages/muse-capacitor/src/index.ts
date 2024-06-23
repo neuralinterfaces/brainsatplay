@@ -73,6 +73,7 @@ export const channelNames = ['TP9', 'AF7', 'AF8', 'TP10', 'AUX'];
 export type MuseClientOptions = {
     aux?: boolean;
     ppg?: boolean;
+    device?: BleDevice;
 }
 
 export class MuseClient {
@@ -95,35 +96,69 @@ export class MuseClient {
     private lastIndex: number | null = null;
     private lastTimestamp: number | null = null;
 
-    constructor({ aux = false, ppg = false }: MuseClientOptions = {}) {
+    constructor({ 
+        aux = false, 
+        ppg = false,
+        device,
+    }: MuseClientOptions = {}) {
         this.enableAux = aux;
         this.enablePpg = ppg;
+        this.device = device
     }
 
 
-    device?: BleDevice;
+    device?: BleDevice
 
     writeValue = async (characteristicId: string, value: DataView) => {
         if (!this.device) return;
         await BleClient.writeWithoutResponse(this.device.deviceId, MUSE_SERVICE, characteristicId, value); // NOTE: Muse assumes write without response
     }
 
-    async connect(device?: BleDevice) {
+    async connect() {
 
         await BleClient.initialize();
 
-        if (device) this.device = device;
-        else {
+        // Request device if not provided
+        if (!this.device) this.device = await BleClient.requestDevice({ services: [ MUSE_SERVICE ] });
+        
+        // Otherwise try scanning for provided device
+        // NOTE: This can be generalized across all devices, not just Muse...
+        else if (navigator.bluetooth.requestLEScan) {
 
-            this.device = await BleClient.requestDevice({
-                services: [ MUSE_SERVICE ],
-            });
+            const targetId = this.device.deviceId;
+
+            const devices = await BleClient.getDevices([ targetId ]);
+            console.log('dEvices', devices)
+
+            const scanResult = new Promise(async (resolve, reject) => {
+                await BleClient.requestLEScan(
+                    {
+                        services: [ MUSE_SERVICE ],
+                    },
+                    async (result) => {
+                        const { device, rssi } = result;
+                        console.log('Device found', device.name, device.deviceId, rssi, targetId)
+                        if (device.deviceId === targetId) {
+                            await BleClient.stopLEScan();
+                            resolve(device);
+                        }
+                    }
+                )
             
-            await BleClient.connect(this.device.deviceId, () => {
-                delete this.device;
-                this.connectionStatus.next(false);
-            });    
+                setTimeout(async () => {
+                    await BleClient.stopLEScan();
+                    reject('Device not found');
+                }, 5000);
+            })
+
+            this.device = await scanResult as BleDevice
         }
+
+        // Connect to device
+        await BleClient.connect(this.device.deviceId, () => {
+            delete this.device;
+            this.connectionStatus.next(false);
+        }); 
 
         this.deviceName = this.device.name || null;
         const deviceId = this.device.deviceId;

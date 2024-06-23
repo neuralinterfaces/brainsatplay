@@ -86,7 +86,9 @@ export class MuseDevice extends Device {
 
     }
 
-    connect = async ( options: MuseClientOptions ) => {
+    connect = async ( 
+        options: MuseClientOptions 
+    ) => {
 
         this.client = new MuseClient(options);
 

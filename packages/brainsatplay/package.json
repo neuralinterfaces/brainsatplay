@@ -8,6 +8,7 @@
         "build": "vite build"
     },
     "dependencies": {
-        "@brainsatplay/muse": "0.0.1"
+        "@brainsatplay/muse": "0.0.1",
+        "@brainsatplay/device": "0.0.1"
     }
 }
