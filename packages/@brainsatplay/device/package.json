@@ -4,7 +4,7 @@
   "description": "Basic device class for Brains@Play",
   "main": "dist/device.umd.js",
   "module": "dist/device.es.js",
-  "types": "dist/device.d.ts",
+  "types": "dist/device.es.d.ts",
   "repository": "https://github.com/garrettmflynn/brainsatplay/packages/@brainsatplay/device",
   "author": "Garrett Flynn <garrettmflynn@gmail.com>",
   "license": "MIT",
@@ -13,5 +13,9 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "devDependencies": {
+      "vite": "^5.2.11",
+      "vite-plugin-dts": "^3.9.1"
+  }
 }

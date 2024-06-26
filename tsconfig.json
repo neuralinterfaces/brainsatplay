@@ -21,6 +21,6 @@
       "noEmitOnError": true,
     },
   
-    "include": ["packages/**/src/**/*.ts"],
+    "include": ["packages/**/src/**/*.ts", "src"],
     "exclude": ["node_modules", "**/dist"]
   }

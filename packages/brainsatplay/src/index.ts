@@ -1,4 +1,5 @@
-import * as muse from '@brainsatplay/muse'
+// Always import the base device class first
+export * from '../../@brainsatplay/device/src/index'
 
-export * from '@brainsatplay/device'
-export { muse }
+// Export child classes
+export * as muse from '../../@brainsatplay/muse/src/index'

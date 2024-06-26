@@ -1,10 +1,15 @@
 
 
 import { defineConfig } from "vite";
-import * as viteBase from "../../../vite.base";
+import dts from "vite-plugin-dts";
 
 export default defineConfig({
-    plugins: viteBase.plugins,
+    plugins: [
+        dts({
+            rollupTypes: true,
+            include: [ "src/**/*.ts"]
+        })
+    ],
     build: {
         lib: {
             entry: "src/index.ts",

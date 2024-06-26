@@ -1,0 +1,79 @@
+name: iOS Release
+
+on:
+  push:
+    branches: ["latest"]
+
+  workflow_dispatch:
+
+jobs:
+  build_ios:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js 16
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Setup Ruby Environment for Mobile Build
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0' 
+          bundler-cache: true
+
+      - name: Downgrade CocoaPods Version
+        run: |
+          INSTALLED_VERSION=$(pod --version)
+          echo "Installed CocoaPods version: $INSTALLED_VERSION"
+          # Parse major, minor, and patch version
+          IFS='.' read -r -a VERSION <<< "$INSTALLED_VERSION"
+          MAJOR_VERSION=${VERSION[0]}
+          MINOR_VERSION=${VERSION[1]}
+          echo "Downgrading CocoaPods to version 1.10.2..."
+          sudo gem uninstall cocoapods --all --executables
+          sudo gem install cocoapods -v 1.10.2
+
+      - name: Install dependencies
+        id: install_code
+        run: npm ci
+
+      - name: Build
+        id: build_code
+        run: npm run build -- --target ios
+
+      - uses: actions/cache@v4
+        with:
+          path: ios/App/Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+
+      - uses: maierj/fastlane-action@v3.1.0
+        env:
+          DEVELOPER_APP_IDENTIFIER: ${{ secrets.APP_BUNDLE_IDENTIFIER }}
+          DEVELOPER_APP_ID: ${{ secrets.APP_ID }}
+          PROVISIONING_PROFILE_SPECIFIER: match AppStore ${{ secrets.APP_BUNDLE_IDENTIFIER }}
+          TEMP_KEYCHAIN_USER: ${{ secrets.TEMP_KEYCHAIN_USER }}
+          TEMP_KEYCHAIN_PASSWORD: ${{ secrets.TEMP_KEYCHAIN_PASSWORD }}
+          APPLE_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ISSUER_ID }}
+          APPLE_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
+          APPLE_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY }}
+          CERTIFICATE_STORE_URL: https://github.com/${{ secrets.CERTIFICATE_STORE_REPO }}.git
+          GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
+          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
+          FASTLANE_APPLE_ID: ${{ secrets.APPLE_ID }}
+          MATCH_USERNAME: ${{ secrets.APPLE_ID }}
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          APP_STORE_CONNECT_TEAM_ID: ${{ secrets.APP_STORE_CONNECT_TEAM_ID }}
+          DEVELOPER_PORTAL_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        with:
+          lane: closed_beta
+          
+      - name: Upload release bundle
+        uses: actions/upload-artifact@v2
+        with:
+          name: ios-release
+          path: ./App.ipa
+          retention-days: 60

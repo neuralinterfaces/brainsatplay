@@ -11,11 +11,11 @@ import {
     EEG_SAMPLES_PER_READING,
     PPG_SAMPLES_PER_READING,
     ACCELEROMETER_SAMPLES_PER_READING
-} from 'muse-capacitor'
+} from '../../../muse-capacitor/src/index'
 
-export * from 'muse-capacitor'
+export * from '../../../muse-capacitor/src/index'
 
-import { Device, DeviceMetadata } from 'brainsatplay'
+import { Device, DeviceMetadata } from '../../../brainsatplay/src/index'
 
 // Transformation from generic to 10-20 system
 const indexToChannel = (index: number) => {
