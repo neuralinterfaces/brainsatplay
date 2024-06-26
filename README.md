@@ -2,16 +2,19 @@
 The Platform for Neural Interfaces
 
 ## The Problem
-Currently, the decision to purchase neurotechnology hardware is a decision to purchase a walled garden. Each company has its own hardware—and each hardware has its own software. If you purchase a headset from one company, you are limited to the content that company, or its generous community of users, provides.
+It's hard to deny that current consumer choices around neurotechnology are motivated by access to one-off experiences (e.g. Muse meditation, Emotiv games, Neurosity productivity tools, etc.) rather than the quality of the hardware itself and the breadth of possible content that could be accessed with it. 
+
+This is largely because hardware solutions are genereally limited to high-production content provided by that company—or, at best, their generous community of users.
 
 ## The Vision
-Everyone should be able to access the same content with any EEG headset. As such, we should reduce the incentive for neurotechnology companies to create walled gardens around their hardware.
+We believe that **everyone should be able to access the same content with any EEG headset**. Breaking down walled gardens will lead to a more diverse and competitive market for neurotechnology. Instead of focusing on the exclusivity of their software, companies will be forced to compete on the quality of their hardware.
 
-This will allow for a more competitive market, where companies are forced to compete on the quality of their hardware—not the exclusivity of their software.
+All stakeholders in the long-term viability of commercial neurotechnology, from hardware manufacturers to software developers to end users, should be invested in increased interoperability within the neurotechnology ecosystem.
 
-## The Solution
-### Brains@Play
-Brains@Play is a cross-platform app for neural interfaces. It leverages [Commoners](https://commoners.dev) for web, desktop, and mobile deployment.
+This is where Brains@Play comes in.
+
+## What is Brains@Play?
+Brains@Play is a cross-platform system for accessing brain-responsive applications compatible with a wide range of neurotechnology devices. It leverages [Commoners](https://commoners.dev) for web, desktop, and mobile deployment.
 
 Within Brains@Play, there are also several packages that can be used independently for other projects.
 - [`brainsatplay`](./packages/brainsatplay) is a uniform API for accessing neural data across platforms. While compatile with any web-based project, this is designed to be used with [Commoners](https://commoners.dev) for cross-platform distribution on web, desktop, and mobile.
