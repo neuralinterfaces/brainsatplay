@@ -35,7 +35,7 @@ This will install all the necessary Python dependencies for the project.
 
 Once complete, activate the environment by running the following command:
 ```bash
-conda activate vame-desktop
+conda activate brainsatplay
 ```
 
 ### Node.js
