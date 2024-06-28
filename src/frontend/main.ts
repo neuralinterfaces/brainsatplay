@@ -12,6 +12,7 @@ import './tasks/Oddball'
 import { Tabs } from './components/Tabs';
 import { DeviceManager } from './components/DeviceManager';
 import { OddballTask } from './components/tasks/OddballTask';
+import './performance'
 
 type Timestamp = {
   device?: number,
