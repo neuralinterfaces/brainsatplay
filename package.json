@@ -38,8 +38,7 @@
     "@capacitor/cli": "^5.3.0",
     "@capacitor/ios": "^5.3.0",
     "@commoners/bluetooth": "0.0.38",
-    "commoners": "0.0.46",
+    "commoners": "0.0.47",
     "vite-plugin-dts": "^3.9.1"
-  },
-  "main": "/Users/garrettflynn/Documents/GitHub/brainsatplay/.commoners/.temp/main.js"
+  }
 }
