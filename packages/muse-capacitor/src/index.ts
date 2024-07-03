@@ -118,41 +118,46 @@ export class MuseClient {
 
         await BleClient.initialize();
 
-        // Request device if not provided
-        if (!this.device) this.device = await BleClient.requestDevice({ services: [ MUSE_SERVICE ] });
-        
-        // Otherwise try scanning for provided device
-        // NOTE: This can be generalized across all devices, not just Muse...
-        else if (navigator.bluetooth.requestLEScan) {
+        this.device = await BleClient.requestDevice({  name: this.device?.name, services: [ MUSE_SERVICE ] });
+    
+        //  // Custom device connection workflow
+        //  // NOTE: Should generalize across other devices, not just Muse
+        // if (navigator.bluetooth.requestLEScan) {
 
-            const targetId = this.device.deviceId;
+        //     const targetId = this.device.deviceId;
 
-            const devices = await BleClient.getDevices([ targetId ]);
-            console.log('dEvices', devices)
+        //     const scanResult = new Promise(async (resolve, reject) => {
 
-            const scanResult = new Promise(async (resolve, reject) => {
-                await BleClient.requestLEScan(
-                    {
-                        services: [ MUSE_SERVICE ],
-                    },
-                    async (result) => {
-                        const { device, rssi } = result;
-                        console.log('Device found', device.name, device.deviceId, rssi, targetId)
-                        if (device.deviceId === targetId) {
-                            await BleClient.stopLEScan();
-                            resolve(device);
-                        }
-                    }
-                )
+        //         const scanPromise = BleClient.requestLEScan(
+        //             {
+        //                 services: [ MUSE_SERVICE ],
+        //             },
+        //             async (result) => {
+        //                 const { device, rssi } = result;
+        //                 console.log('Device found', device.name, device.deviceId, rssi, targetId)
+        //                 if (device.deviceId === targetId) {
+        //                     await BleClient.stopLEScan();
+        //                     resolve(device);
+        //                 }
+        //             }
+        //         )
             
-                setTimeout(async () => {
-                    await BleClient.stopLEScan();
-                    reject('Device not found');
-                }, 5000);
-            })
+        //         setTimeout(async () => {
+        //             console.error('AHHH')
+        //             await BleClient.stopLEScan();
+        //             reject('Device not found');
+        //         }, 5000);
 
-            this.device = await scanResult as BleDevice
-        }
+        //         await scanPromise
+        //         console.warn('PROMISE DONE')
+        //     })
+
+        //     this.device = await scanResult as BleDevice
+        // }
+
+
+        // // Normal device connection workflow
+        // else this.device = await BleClient.requestDevice({  name: this.device?.name, services: [ MUSE_SERVICE ] });
 
         // Connect to device
         await BleClient.connect(this.device.deviceId, () => {

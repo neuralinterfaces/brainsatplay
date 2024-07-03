@@ -36,6 +36,17 @@ type DeviceContext = {
   }
 }
 
+// Load previous devices
+const registeredDevices = JSON.parse(globalThis.localStorage.getItem('devices') || '{}')
+
+console.warn('Registered devices', registeredDevices)
+
+const previousDevice = null
+// const previousDevice = {
+//   deviceId: "/F7ZGWIyP5+KPJCTnJiJfg==", // NOTE: This is only relevant on web and mobile
+//   name: "Muse-7F37" // NOTE: This is only relevant on desktop
+// }
+
 
 const recording: any = {}
 
@@ -115,6 +126,14 @@ const oddballTask = new OddballTask()
 
 const states = {}
 
+
+if (commoners.target === 'desktop') {
+  commoners.plugins.bluetooth.onSelect((device) => {
+    if (device) console.warn('Selected MAC Address', device)
+    else console.warn('Device selection cancelled.')
+  })
+}
+
 const onConnect = async function ({ device, options }) {
 
   const deviceClass = device.cls
@@ -125,24 +144,28 @@ const onConnect = async function ({ device, options }) {
   const toSubscribe = [ 'eeg', 'telemetry', 'acceleration', 'ppg' ]
   toSubscribe.forEach((name) => deviceInstance.subscribe(name, (data) => recordData(name, data)))
 
-  const previousDevice = {
-    deviceId: "7biKWBlUNCpF9obq/KYuPQ==",
-    name: "Muse-7F37"
-  }
+  if (commoners.target === 'desktop') commoners.plugins.bluetooth.match(previousDevice, 5000) // Set device to match on desktop
 
-  if (previousDevice) {
+  // options.device = previousDevice
 
-    // Select previous device on desktop
-    if (commoners.target === 'desktop') commoners.plugins.bluetooth.select(previousDevice.deviceId) // Pre-select device
-
-    // Select previous device on mobile and web (experimental)
-    else options.device = previousDevice
-
-  }
-    
   await deviceInstance.connect(options)
 
+  const deviceInfo = deviceInstance.client.device
+
+  // Save previous devices in local storage based on name
+  if (!(deviceInfo.name in registeredDevices)) {
+    registeredDevices[deviceInfo.name] = {
+      ...deviceInfo,
+    }
+    
+    globalThis.localStorage.setItem('devices', JSON.stringify(registeredDevices))
+
+    console.warn('Updated devices', registeredDevices)
+  }
+
   this.connect() // Render connected state
+
+  
 
   // Get metadata and use this to properly plot data
   const metadata = await deviceInstance.info()
