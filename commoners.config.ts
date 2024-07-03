@@ -5,8 +5,8 @@ const defineConfig = (o) => o
 
 export default defineConfig({
 
-    name: "Neural",
-    appId: 'com.neuralinterfaces.neural',
+    name: "Brains@Play",
+    appId: 'com.neuralinterfaces.brainsatplay',
     
     electron: {
         window: {

@@ -36,38 +36,11 @@ html {
 
 body {
   display: grid;
-  grid-template-rows: min-content minmax(0, 1fr) min-content;
+  grid-template-rows: minmax(0, 1fr);
   grid-template-columns: 100%;
   width: 100vw;
   height: 100vh;
   min-height: -webkit-fill-available;
-}
-
-nav > div:last-child {
-  font-size: 80%;
-}
-
-nav {
-  padding: 65px 25px;
-  padding-bottom: 15px !important;
-  border-bottom: 1px solid #e0e0e0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-nav > div {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-footer {
-  padding: 10px 25px;
-  padding-bottom: 20px;
-  color: white;
-  background: black;
 }
 
 main {
@@ -75,9 +48,6 @@ main {
   flex-direction: column;
 }
 
-tab-manager { 
-  padding-top: 10px;
-}
 
 a {
   font-weight: 500;

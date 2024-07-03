@@ -54,17 +54,6 @@ pnpm install
 
 This only needs to be run once at project initialization and when the `package.json` dependencies are updated.
 
-### Linking `brainsatplay`
-You will need to link a local installation of `brainsatplay` during development. To do this, navigate to the `brainsatplay` directory and run the following command:
-```bash
-yarn link
-```
-
-Then, navigate back to the `neural` directory and run the following command:
-```bash
-yarn link brainsatplay
-```
-
 ## Running the App
 To run the app, you will need to run the following command:
 ```bash

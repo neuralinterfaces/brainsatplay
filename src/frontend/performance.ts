@@ -24,6 +24,6 @@ const checkPerformance = (e = { timeStamp: performance.now() }) => {
 
 }
 
-window.addEventListener('mousedown', checkPerformance)
+// window.addEventListener('mousedown', checkPerformance)
 
-setInterval(() => checkPerformance(), 1000)
+// setInterval(() => checkPerformance(), 1000)

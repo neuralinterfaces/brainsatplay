@@ -1,14 +1,14 @@
 {
-  "name": "neural",
+  "name": "brainsatplay-application",
   "version": "0.0.0",
-  "description": "A hybrid application for interacting with neural interfaces.",
+  "description": "The Platform for Neural Interfaces",
   "private": true,
   "type": "module",
   "license": "MIT",
   "author": "Garrett Flynn <garrettmflynn@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/neuralinterfaces/neural.git"
+    "url": "https://github.com/neuralinterfaces/brainsatplay.git"
   },
   "workspaces": [
     "packages/**"
@@ -33,10 +33,6 @@
     "uplot": "^1.6.30"
   },
   "devDependencies": {
-    "@capacitor/android": "^5.5.0",
-    "@capacitor/assets": "^2.0.4",
-    "@capacitor/cli": "^5.3.0",
-    "@capacitor/ios": "^5.3.0",
     "@commoners/bluetooth": "0.0.38",
     "commoners": "0.0.47",
     "vite-plugin-dts": "^3.9.1"

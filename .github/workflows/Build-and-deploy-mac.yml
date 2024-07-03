@@ -27,7 +27,7 @@ jobs:
 
       - uses: conda-incubator/setup-miniconda@v3
         with:
-          activate-environment: neural
+          activate-environment: brainsatplay
           environment-file: environment.yml
           auto-activate-base: false
           
