@@ -130,7 +130,6 @@ const states = {}
 if (commoners.target === 'desktop') {
   commoners.ready.then(() => {
     const { bluetooth } = commoners.plugins
-    if (!bluetooth || !bluetooth.onSelect) return console.error('Bluetooth plugin not available')
     bluetooth.onSelect((device) => {
       if (device) console.warn('Selected MAC Address', device)
       else console.warn('Device selection cancelled.')

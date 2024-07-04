@@ -1,7 +1,13 @@
-// import { defineConfig } from '@commoners/solidarity'
+import { defineConfig } from '@commoners/solidarity'
 import * as bluetoothPlugin from '@commoners/bluetooth'
 
-const defineConfig = (o) => o 
+// const defineConfig = (o) => o 
+
+const flaskService = {
+    name: 'flask',
+    src: './src/services/python/main.py',
+    distpath: './build/python'
+}
 
 export default defineConfig({
 
@@ -21,14 +27,14 @@ export default defineConfig({
     services: {
 
         // Packaged with pyinstaller
-        python: {
-            description: 'A simple Python server',
-            src: './src/services/python/main.py',
+        [flaskService.name]: {
+            description: 'A simple Flask server',
+            src: flaskService.src,
             publish: {
-                build: 'python -m PyInstaller --name flask --onedir --clean ./src/services/python/main.py --distpath ./build/python',
+                build: `python -m PyInstaller --name ${flaskService.name} --onedir --clean ${flaskService.src} --distpath ${flaskService.distpath}`,
                 local: {
-                    src: 'flask',
-                    base: './build/python/flask', // Will be copied
+                    src: flaskService.name,
+                    base: `${flaskService.distpath}/${flaskService.name}`,
                 }
             }
         }

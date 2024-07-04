@@ -5,12 +5,12 @@ const log = (data: any) => {
 }
 
 
-const service = commoners.services.python
+const service = commoners.services.flask
 
 // Check if the Python service is available
 if (service) {
 
-    const pythonUrl = new URL(service.url) // Equivalent to commoners://python
+    const pythonUrl = new URL(service.url) // Equivalent to commoners://flask
 
     const runCommands = async () => {
         fetch(new URL('connected', pythonUrl))

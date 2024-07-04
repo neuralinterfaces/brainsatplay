@@ -39,12 +39,11 @@ conda activate brainsatplay
 ```
 
 ### Node.js
-You will need to have [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/getting-started/install) installed on your machine.
+You will need to have [Node.js](https://nodejs.org/en/) installed on your machine.
 
 This repository uses PNPM for package management. Install PNPM by running the following command:
 ```bash
-corepack enable
-corepack prepare pnpm@latest --activate
+npm install -g pnpm
 ```
 
 Install all packages by running the following command:
@@ -53,6 +52,13 @@ pnpm install
 ```
 
 This only needs to be run once at project initialization and when the `package.json` dependencies are updated.
+
+#### Linking to Local `commoners` Package
+If you are working on the `commoners` package locally, you will need to link to it in this project. To do so, run the following command:
+```bash
+pnpm link ~/Documents/Github/commoners/packages/cli
+pnpm link ~/Documents/Github/commoners/packages/core
+```
 
 ## Running the App
 To run the app, you will need to run the following command:
