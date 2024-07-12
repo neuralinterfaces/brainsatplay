@@ -1,7 +1,7 @@
-import { defineConfig } from '@commoners/solidarity'
+// import { defineConfig } from '@commoners/solidarity'
 import * as bluetoothPlugin from '@commoners/bluetooth'
 
-// const defineConfig = (o) => o 
+const defineConfig = (o) => o 
 
 const flaskService = {
     name: 'flask',
@@ -14,11 +14,7 @@ export default defineConfig({
     name: "Brains@Play",
     appId: 'com.neuralinterfaces.brainsatplay',
     
-    electron: {
-        window: {
-            width: 1000 // Adjust default width
-        }
-    },
+    electron: { window: { width: 1000 } },
 
     plugins: {
         bluetooth: bluetoothPlugin,
