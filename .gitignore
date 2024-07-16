@@ -4,6 +4,9 @@
 
 .env
 
+# pnpm
+**/pnpm-lock.yaml
+
 # Old Code
 old
 

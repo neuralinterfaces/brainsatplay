@@ -1,11 +1,13 @@
 
+import { TARGET, SERVICES, READY } from 'commoners:env'
+
 const log = (data: any) => {
     if (data.error) return console.error(data.error)
     console.warn(`${data.source ? `${data.source} (${data.command})` : data.command} - ${JSON.stringify(data.payload)}`)
 }
 
 
-const service = commoners.services.flask
+const service = SERVICES.flask
 
 // Check if the Python service is available
 if (service) {
@@ -19,8 +21,8 @@ if (service) {
             .catch(e => console.error('Failed to request from Python server', e))
     }
 
-    if (commoners.target === 'desktop') {
-        service.onActivityDetected(runCommands)
+    if (TARGET === 'desktop') {
+        service.onActive(runCommands)
 
         service.onClosed(() => {
             console.error('Python server was closed!')
@@ -32,7 +34,7 @@ if (service) {
 }
 
 // Disable devices if bluetooth plugin is not available
-commoners.ready.then(plugins => {
+READY.then(plugins => {
     if (!('bluetooth' in plugins)) {
         const deviceElements = document.querySelectorAll('.device')
         deviceElements.forEach(device => device.setAttribute('disabled', ''))

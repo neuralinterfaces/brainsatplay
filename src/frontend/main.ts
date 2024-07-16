@@ -1,5 +1,7 @@
 import './commoners' // Trigger commoners checks
 
+import { TARGET, PLUGINS, READY } from 'commoners:env'
+
 import { Reading } from '../../packages/brainsatplay/src';
 
 import { Graphs } from './components/Graphs';
@@ -127,9 +129,9 @@ const oddballTask = new OddballTask()
 const states = {}
 
 
-if (commoners.target === 'desktop') {
-  commoners.ready.then(() => {
-    const { bluetooth } = commoners.plugins
+if (TARGET === 'desktop') {
+  READY.then(() => {
+    const { bluetooth } = PLUGINS
     bluetooth.onSelect((device) => {
       if (device) console.warn('Selected MAC Address', device)
       else console.warn('Device selection cancelled.')
@@ -147,7 +149,7 @@ const onConnect = async function ({ device, options }) {
   const toSubscribe = [ 'eeg', 'telemetry', 'acceleration', 'ppg' ]
   toSubscribe.forEach((name) => deviceInstance.subscribe(name, (data) => recordData(name, data)))
 
-  if (commoners.target === 'desktop') commoners.plugins.bluetooth.match(previousDevice, 5000) // Set device to match on desktop
+  if (TARGET === 'desktop') PLUGINS.bluetooth.match(previousDevice, 5000) // Set device to match on desktop
 
   // options.device = previousDevice
 
