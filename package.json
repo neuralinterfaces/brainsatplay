@@ -22,14 +22,16 @@
     "launch": "commoners launch",
     "launch:desktop": "commoners launch --desktop",
     "launch:mobile": "commoners launch --mobile",
-    "env:init": "npm install",
-    "env:clear": "rm -rf package-lock.json && rm -rf node_modules"
+    "cleanup": "pnpm run clean:modules && pnpm run clean:dist",
+    "clean:modules": "rm -rf node_modules && pnpm -r exec rm -rf node_modules",
+    "clean:dist": "rm -rf dist && pnpm -r exec rm -rf dist"
   },
   "dependencies": {
     "lit": "^3.1.4",
     "uplot": "^1.6.30"
   },
   "devDependencies": {
+    "@capacitor-community/bluetooth-le": "6.0.0",
     "@capacitor/assets": "^3.0.5",
     "@capacitor/cli": "^6.1.0",
     "@capacitor/core": "^6.1.0",
