@@ -1,5 +1,6 @@
 
-import { DESKTOP, SERVICES, READY } from 'commoners:env'
+// import { DESKTOP, SERVICES, READY } from 'commoners:env'
+const { DESKTOP, SERVICES, READY } = commoners
 
 const log = (data: any) => {
     if (data.error) return console.error(data.error)

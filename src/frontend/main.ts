@@ -1,6 +1,7 @@
 import './commoners' // Trigger commoners checks
 
-import { DESKTOP, PLUGINS, READY } from 'commoners:env'
+// import { DESKTOP, PLUGINS, READY } from 'commoners:env'
+const { DESKTOP, PLUGINS, READY } = commoners
 
 import { Reading } from '../../packages/brainsatplay/src';
 
