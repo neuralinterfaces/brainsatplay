@@ -1,5 +1,5 @@
 
-import { TARGET, SERVICES, READY } from 'commoners:env'
+import { DESKTOP, SERVICES, READY } from 'commoners:env'
 
 const log = (data: any) => {
     if (data.error) return console.error(data.error)
@@ -21,7 +21,7 @@ if (service) {
             .catch(e => console.error('Failed to request from Python server', e))
     }
 
-    if (TARGET === 'desktop') {
+    if (DESKTOP) {
         service.onActive(runCommands)
 
         service.onClosed(() => {

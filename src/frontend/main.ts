@@ -1,6 +1,6 @@
 import './commoners' // Trigger commoners checks
 
-import { TARGET, PLUGINS, READY } from 'commoners:env'
+import { DESKTOP, PLUGINS, READY } from 'commoners:env'
 
 import { Reading } from '../../packages/brainsatplay/src';
 
@@ -129,7 +129,7 @@ const oddballTask = new OddballTask()
 const states = {}
 
 
-if (TARGET === 'desktop') {
+if (DESKTOP) {
   READY.then(() => {
     const { bluetooth } = PLUGINS
     bluetooth.onSelect((device) => {
@@ -149,7 +149,7 @@ const onConnect = async function ({ device, options }) {
   const toSubscribe = [ 'eeg', 'telemetry', 'acceleration', 'ppg' ]
   toSubscribe.forEach((name) => deviceInstance.subscribe(name, (data) => recordData(name, data)))
 
-  if (TARGET === 'desktop') PLUGINS.bluetooth.match(previousDevice, 5000) // Set device to match on desktop
+  if (DESKTOP) PLUGINS.bluetooth.match(previousDevice, 5000) // Set device to match on desktop
 
   // options.device = previousDevice
 
