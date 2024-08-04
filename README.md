@@ -1,5 +1,5 @@
 # Brains@Play
-A Platform for 8 Billion Brains
+A Cross-Platform Application for 8 Billion Brains
 
 ## Getting Started
 ### Installation
