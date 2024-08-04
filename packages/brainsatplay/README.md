@@ -1,0 +1,2 @@
+# brainsatplay
+A cross-platform API for authoring brain-responsive applications compatible with a wide range of neurotechnology devices. It can be used with [Commoners](https://commoners.dev) to access neural data across web, desktop, and mobile distributions of your application.

@@ -1,7 +1,5 @@
 import { LitElement, css, html, unsafeCSS } from 'lit';
 import uPlot from 'uplot';
-import 'uplot'
-
 import uplotCSS from 'uplot/dist/uPlot.min.css?inline'
 
 type GraphsParameters = {

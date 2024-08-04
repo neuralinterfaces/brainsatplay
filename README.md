@@ -1,29 +1,9 @@
 # Brains@Play
-The Platform for Neural Interfaces
+A Platform for 8 Billion Brains
 
-## The Problem
-It's hard to deny that current consumer choices around neurotechnology are motivated by access to one-off experiences (e.g. Muse meditation, Emotiv games, Neurosity productivity tools, etc.) rather than the quality of the hardware itself and the breadth of possible content that could be accessed with it. 
-
-This is largely because hardware solutions are genereally limited to high-production content provided by that company—or, at best, their generous community of users.
-
-## The Vision
-We believe that **everyone should be able to access the same content with any EEG headset**. Breaking down walled gardens will lead to a more diverse and competitive market for neurotechnology. Instead of focusing on the exclusivity of their software, companies will be forced to compete on the quality of their hardware.
-
-All stakeholders in the long-term viability of commercial neurotechnology, from hardware manufacturers to software developers to end users, should be invested in increased interoperability within the neurotechnology ecosystem.
-
-This is where Brains@Play comes in.
-
-## What is Brains@Play?
-Brains@Play is a cross-platform system for accessing brain-responsive applications compatible with a wide range of neurotechnology devices. It leverages [Commoners](https://commoners.dev) for web, desktop, and mobile deployment.
-
-Within Brains@Play, there are also several packages that can be used independently for other projects.
-- [`brainsatplay`](./packages/brainsatplay) is a uniform API for accessing neural data across platforms. While compatile with any web-based project, this is designed to be used with [Commoners](https://commoners.dev) for cross-platform distribution on web, desktop, and mobile.
-    - [`@brainsatplay/device`](./packages/@brainsatplay/device) is a base class for interfacing with neural devices.
-    - [`@brainsatplay/muse`](./packages/@brainsatplay/muse) is a class for interfacing with Muse devices.
-- [`muse-capacitor`](./packages/muse-capacitor) is a Muse API that works with Capacitor for iOS and Android deployment.
-
-## Installation
-### Python
+## Getting Started
+### Installation
+#### Python
 You will need to have [miniconda](https://docs.conda.io/en/latest/miniconda.html) installed on your machine.
 
 Create the Conda environment for the project by running the following command:
@@ -38,7 +18,7 @@ Once complete, activate the environment by running the following command:
 conda activate brainsatplay
 ```
 
-### Node.js
+#### Node.js
 You will need to have [Node.js](https://nodejs.org/en/) installed on your machine.
 
 This repository uses PNPM for package management. Install PNPM by running the following command:
@@ -53,13 +33,23 @@ pnpm install
 
 This only needs to be run once at project initialization and when the `package.json` dependencies are updated.
 
-## Running the App
+### Running the App
 To run the app, you will need to run the following command:
 ```bash
 npm run start
 ```
 
 This will start the Electron app.
+
+## Packages
+
+| Package                                         | Version (click for README)                                                                                                    |
+| ----------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
+| [brainsatplay](packages/brainsatplay)                           | [![vite version](https://img.shields.io/npm/v/brainsatplay.svg?label=%20)](./packages/brainsatplay/README.md)                                    |
+| [@brainsatplay/device](packages/@brainsatplay/device) | [![plugin-legacy version](https://img.shields.io/npm/v/@brainsatplay/device.svg?label=%20)](packages/@brainsatplay/device/README.md) |
+| [@brainsatplay/muse](packages/@brainsatplay/muse)             | [![create-vite version](https://img.shields.io/npm/v/@brainsatplay/muse.svg?label=%20)](packages/@brainsatplay/muse/README.md)               |
+| [muse-capacitor](packages/muse-capacitor)             | [![create-vite version](https://img.shields.io/npm/v/muse-capacitor.svg?label=%20)](packages/muse-capacitor/README.md)               |
+
 
 ## Acknowledgements
 This project is part of [Neural Interfaces](https://github.com/neuralinterfaces).

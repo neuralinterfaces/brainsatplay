@@ -1,2 +1,2 @@
 # @brainsatplay/muse
-A wrapper for the Muse EEG headband.
+A class for interfacing with Muse EEG headbands
