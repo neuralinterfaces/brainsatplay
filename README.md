@@ -45,10 +45,10 @@ This will start the Electron app.
 
 | Package                                         | Version (click for README)                                                                                                    |
 | ----------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
-| [brainsatplay](packages/brainsatplay)                           | [![vite version](https://img.shields.io/npm/v/brainsatplay.svg?label=%20)](./packages/brainsatplay/README.md)                                    |
-| [@brainsatplay/device](packages/@brainsatplay/device) | [![plugin-legacy version](https://img.shields.io/npm/v/@brainsatplay/device.svg?label=%20)](packages/@brainsatplay/device/README.md) |
-| [@brainsatplay/muse](packages/@brainsatplay/muse)             | [![create-vite version](https://img.shields.io/npm/v/@brainsatplay/muse.svg?label=%20)](packages/@brainsatplay/muse/README.md)               |
-| [muse-capacitor](packages/muse-capacitor)             | [![create-vite version](https://img.shields.io/npm/v/muse-capacitor.svg?label=%20)](packages/muse-capacitor/README.md)               |
+| [brainsatplay](packages/brainsatplay)                           | [![brainsatplay version](https://img.shields.io/npm/v/brainsatplay.svg?label=%20)](./packages/brainsatplay/README.md)                                    |
+| [@brainsatplay/device](packages/@brainsatplay/device) | [![@brainsatplay/device version](https://img.shields.io/npm/v/@brainsatplay/device.svg?label=%20)](packages/@brainsatplay/device/README.md) |
+| [@brainsatplay/muse](packages/@brainsatplay/muse)             | [![@brainsatplay/muse version](https://img.shields.io/npm/v/@brainsatplay/muse.svg?label=%20)](packages/@brainsatplay/muse/README.md)               |
+| [muse-capacitor](packages/muse-capacitor)             | [![muse-capacitor version](https://img.shields.io/npm/v/muse-capacitor.svg?label=%20)](packages/muse-capacitor/README.md)               |
 
 
 ## Acknowledgements
