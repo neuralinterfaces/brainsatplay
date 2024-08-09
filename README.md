@@ -1,6 +1,9 @@
 # Brains@Play
 A Cross-Platform Application for 8 Billion Brains
 
+[![All Contributors](https://img.shields.io/github/all-contributors/neuralinterfaces/brainsatplay?color=ee8449&style=flat-square)](#contributors)
+
+
 ## Getting Started
 ### Installation
 #### Python
@@ -50,6 +53,17 @@ This will start the Electron app.
 | [@brainsatplay/muse](packages/@brainsatplay/muse)             | [![@brainsatplay/muse version](https://img.shields.io/npm/v/@brainsatplay/muse.svg?label=%20)](packages/@brainsatplay/muse/CHANGELOG.md)               |
 | [muse-capacitor](packages/muse-capacitor)             | [![muse-capacitor version](https://img.shields.io/npm/v/muse-capacitor.svg?label=%20)](packages/muse-capacitor/CHANGELOG.md)               |
 
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## Acknowledgements
 This project is part of [Neural Interfaces](https://github.com/neuralinterfaces).

@@ -1,5 +1,7 @@
 // import { defineConfig } from '@commoners/solidarity'
-import * as bluetoothPlugin from '@commoners/bluetooth'
+// import * as bluetoothPlugin from '@commoners/bluetooth'
+
+import * as bluetoothPlugin from '../commoners/packages/plugins/devices/ble/index'
 
 const defineConfig = (o) => o 
 
