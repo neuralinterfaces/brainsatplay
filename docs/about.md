@@ -3,8 +3,6 @@ sidebar: false
 ---
 
 # Meet the Team
-Our mission is to make brain-responsive applications accessible to everyone, regardless of their background in neuroscience or software engineering.
-
 ### Garrett Flynn
 *Founder and Director of Brains@Play*
 
@@ -14,8 +12,8 @@ Garrett is a software engineer with a passion for building brain-responsive appl
 - [Aadithyan Rajesh](https://www.linkedin.com/in/aadithyanrajesh/) (2024)
 - [Chandhana Sathishkumar](https://www.linkedin.com/in/chandhanas/) (2022)
 
-## A Brief History
-### The Brains@Play Initiative (2020 - 2021)
+## A Brief History of Brains@Play
+### 2020: The Brains@Play Initiative
 The Brains@Play Initiative was founded as a transdisciplinary research project at the University of Southern California. 
 
 The initiative was supported by faculty advisors including: 
@@ -25,13 +23,18 @@ The initiative was supported by faculty advisors including:
 
 Together, we ran an [international design fiction competition](/projects/initiative/brains-and-games-competition.md), hosted a [virtual event](/projects/initiative/livewire.md) on the ethical and social implications of emerging neurotechnology, and even led a [high school course](/projects/initiative/brains-at-play-course.md) on brain-computer interfaces.
 
-### Brains@Play LLC (2021 - 2023)
-Organized at the peak of the COVID-19 pandemic, Brains@Play LLC was organized by Garrett Flynn and Joshua Brewster to develop low-cost biosensing hardware and browser-based BCI applications.
+### 2021: Brains@Play LLC
 
-Though we built a considerable amount of open-source software—including the original [Brains@Play Platform](https://app.brainsatplay.com)—along the way, we did not secure sustainable funding and the company was dissolved in late 2023.
+Organized at the peak of the COVID-19 pandemic, Brains@Play LLC was organized by Garrett Flynn and Joshua Brewster to develop low-cost biosensing hardware and browser-based BCI applications.We built a considerable amount of open-source software, particularly the [Brains@Play Platform](https://app.brainsatplay.com).
 
-A complete record of the company's output can be found on the [archived GitHub organization](https://github.com/brainsatplay).
+Along the way, we made a few mistakes, including:
+1. **Coupling our software roadmap to hardware** development goals that were too ambitious
+2. **Abandoning our core product** to focus on developer tools
+3. **Failing to secure sustainable funding** through contracts, grants, or community support.
 
+Following disputes between the founders about proper professional conduct and a lack of alignment on future business decisions, **Brains@Play LLC was dissolved in late 2023.** 
 
-### Brains@Play (2024 - Present)
-Since mid-2024, Brains@Play has been revitalized as a personal initiative of Garrett Flynn to release free and open-source educational material on the design and development of brain-responsive applications.
+The GitHub organization for the company was archived to maintain a [record of prior work](https://github.com/brainsatplay).
+
+### 2024: Brains@Play  
+Brains@Play is currently being revitalized by Garrett Flynn as a public project that collects free and open-source educational material on the design and development of brain-responsive applications.

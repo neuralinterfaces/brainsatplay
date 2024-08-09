@@ -12,9 +12,9 @@ export default defineConfig({
 
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide' },
-      { text: 'Blog', link: '/posts' },
-      { text: 'Team', link: '/team' },
+      // { text: 'Guide', link: '/guide' },
+      // { text: 'Blog', link: '/posts' },
+      { text: 'About Us', link: '/about' },
       { text: 'Contact', link: 'mailto:garrettmflynn@gmail.com' }
     ],
 

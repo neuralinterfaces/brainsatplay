@@ -29,9 +29,11 @@ features:
 
 
 ## Getting Started
+We're working on a new set of educational materials to help you get started building brain-responsive applications. Stay tuned!
 
+<!-- 
 You can start building with Brain@Play right away using `npm`!
 
 ```sh
 npm install brainsatplay
-```
+``` -->
