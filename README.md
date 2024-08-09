@@ -1,7 +1,9 @@
 # Brains@Play
-A Cross-Platform Application for 8 Billion Brains
-
 [![All Contributors](https://img.shields.io/github/all-contributors/neuralinterfaces/brainsatplay?color=ee8449&style=flat-square)](#contributors)
+
+Brains@Play is a cross-platform application for 8 billion brains. 
+
+This repository also contains supporting packages for building your own applications with Brains@Play infrastructure.
 
 ## Getting Started
 ### Installation
