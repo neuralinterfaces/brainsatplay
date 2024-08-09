@@ -3,7 +3,6 @@ A Cross-Platform Application for 8 Billion Brains
 
 [![All Contributors](https://img.shields.io/github/all-contributors/neuralinterfaces/brainsatplay?color=ee8449&style=flat-square)](#contributors)
 
-
 ## Getting Started
 ### Installation
 #### Python
@@ -62,7 +61,7 @@ This will start the Electron app.
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="http://garrettflynn.com/"><img src="https://avatars.githubusercontent.com/u/46533749?v=4?s=100" width="100px;" alt="Garrett Michael Flynn"/><br /><sub><b>Garrett Michael Flynn</b></sub></a><br /><a href="#projectManagement-garrettmflynn" title="Project Management">📆</a> <a href="#ideas-garrettmflynn" title="Ideas, Planning, & Feedback">🤔</a> <a href="#content-garrettmflynn" title="Content">🖋</a> <a href="#code-garrettmflynn" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://garrettflynn.com/"><img src="https://avatars.githubusercontent.com/u/46533749?v=4?s=100" width="100px;" alt="Garrett Michael Flynn"/><br /><sub><b>Garrett Michael Flynn</b></sub></a><br /></td>
     </tr>
   </tbody>
 </table>
