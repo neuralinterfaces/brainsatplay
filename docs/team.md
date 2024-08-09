@@ -30,5 +30,8 @@ Organized at the peak of the COVID-19 pandemic, Brains@Play LLC was organized by
 
 Though we built a considerable amount of open-source software—including the original [Brains@Play Platform](https://app.brainsatplay.com)—along the way, we did not secure sustainable funding and the company was dissolved in late 2023.
 
+A complete record of the company's output can be found on the [archived GitHub organization](https://github.com/brainsatplay).
+
+
 ### Brains@Play (2024 - Present)
 Since mid-2024, Brains@Play has been revitalized as a personal initiative of Garrett Flynn to release free and open-source educational material on the design and development of brain-responsive applications.
