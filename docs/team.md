@@ -15,7 +15,7 @@ Garrett is a software engineer with a passion for building brain-responsive appl
 - [Chandhana Sathishkumar](https://www.linkedin.com/in/chandhanas/) (2022)
 
 ## A Brief History
-### The Brains@Play Initiative (2020 - 2022)
+### The Brains@Play Initiative (2020 - 2021)
 The Brains@Play Initiative was founded as a transdisciplinary research project at the University of Southern California. 
 
 The initiative was supported by faculty advisors including: 
@@ -25,8 +25,8 @@ The initiative was supported by faculty advisors including:
 
 Together, we ran an [international design fiction competition](/projects/initiative/brains-and-games-competition.md), hosted a [virtual event](/projects/initiative/livewire.md) on the ethical and social implications of emerging neurotechnology, and even led a [high school course](/projects/initiative/brains-at-play-course.md) on brain-computer interfaces.
 
-### Brains@Play LLC (2022 - 2023)
-At the peak of the COVID-19 pandemic, Brains@Play LLC was organized by Garrett Flynn and Joshua Brewster to develop low-cost biosensing hardware and browser-based BCI applications.
+### Brains@Play LLC (2021 - 2023)
+Organized at the peak of the COVID-19 pandemic, Brains@Play LLC was organized by Garrett Flynn and Joshua Brewster to develop low-cost biosensing hardware and browser-based BCI applications.
 
 Though we built a considerable amount of open-source software—including the original [Brains@Play Platform](https://app.brainsatplay.com)—along the way, we did not secure sustainable funding and the company was dissolved in late 2023.
 
