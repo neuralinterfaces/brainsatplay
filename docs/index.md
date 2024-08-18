@@ -4,8 +4,7 @@ layout: home
 
 hero:
   name: Brains@Play
-  text: Build for 8B Brains
-  tagline: Create and share brain-responsive applications
+  tagline: Build for 8 Billion Brains
   # image: /assets/logo.jpg
   actions:
     - theme: brand

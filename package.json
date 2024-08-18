@@ -24,7 +24,8 @@
     "launch:mobile": "commoners launch --mobile",
     "cleanup": "pnpm run clean:modules && pnpm run clean:dist",
     "clean:modules": "rm -rf node_modules && pnpm -r exec rm -rf node_modules",
-    "clean:dist": "rm -rf dist && pnpm -r exec rm -rf dist"
+    "clean:dist": "rm -rf dist && pnpm -r exec rm -rf dist",
+    "docs": "cd docs && npm start"
   },
   "dependencies": {
     "lit": "^3.1.4",
