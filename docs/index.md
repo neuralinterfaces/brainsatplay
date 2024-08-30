@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: Brains@Play
-  tagline: Reach 8 Billion Brains
+  tagline: The API for 8 Billion Brains
   # image: /assets/logo.jpg
   actions:
     - theme: brand
@@ -15,24 +15,13 @@ hero:
       link: /guide
 
 features:
-  - title: Limitless Possibilities
-    icon: 🔮
-    details: Create anything you can imagine.
-  - title: Multi-Platform Support
-    icon: 💻
-    details: Distribute on web, mobile, or desktop
-  - title: Universal Access
+  - title: The Library
     icon: 🧠
-    details: Accessible to anyone with a brain.
+    details: Local-only brain data acquisition.
+  - title: The Framework
+    icon: 💻
+    details: Web, mobile, and desktop distribution.
+  - title: The API
+    icon: 🔮
+    details: Distributed brain data acquisition and analysis.
 ---
-
-
-## Getting Started
-We're working on a new set of educational materials to help you get started building brain-responsive applications. Stay tuned!
-
-<!-- 
-You can start building with Brain@Play right away using `npm`!
-
-```sh
-npm install brainsatplay
-``` -->
