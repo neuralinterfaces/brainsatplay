@@ -7,7 +7,7 @@ export default defineConfig({
   title: "Brains@Play",
   description: "Brain-Computer Interfaces with Everyone",
 
-  head: [["link", { rel: "icon", href: "/assets/favicon.ico" }]],
+  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
 
   themeConfig: {
     sidebar: {
