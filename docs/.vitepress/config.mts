@@ -6,22 +6,11 @@ export default defineConfig({
 
   lang: 'en-US',
   title: "Brains@Play",
-  description: "An API for 8B Brains",
+  description: "Brain-Computer Interfaces with Everyone",
   
   themeConfig: {
 
-    nav: [
-      { text: 'Home', link: '/' },
-      // { text: 'Guide', link: '/guide' },
-      // { text: 'Blog', link: '/posts' },
-      { text: 'About Us', link: '/about' },
-      { text: 'Contact', link: 'mailto:garrettmflynn@gmail.com' }
-    ],
-
     sidebar: {
-      '/guide': [
-        { text: 'Getting Started', link: '/guide' },
-      ],
       '/projects': [
           {
             text: 'The Brains@Play Initiative',
