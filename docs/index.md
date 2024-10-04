@@ -5,7 +5,6 @@ layout: home
 hero:
   name: Brains@Play
   tagline: Brain-Computer Interfaces with Everyone
-  # image: /assets/logo.jpg
   actions:
     - theme: brand
       text: View your Brainwaves
@@ -34,4 +33,4 @@ A few mistakes stood out as key contributors to the company's failure:
 2. **Focusing on developer tools** rather than our core product.
 3. **Working diligently without a clear business model** and sustainable funding through contracts, grants, or community support.
 
-A complete archive of our work is available on [GitHub](https://github.com/brainsatplay) and a [full summary of our work](https://dl.acm.org/doi/10.1145/3594806.3594810) was published in August 2023 following Garrett's graduation from the MA in Media Arts, Games, and Health program. 
+A complete archive of our work is available on [GitHub](https://github.com/brainsatplay) and a [full summary of our work](https://dl.acm.org/doi/10.1145/3594806.3594810) was published in August 2023 following Garrett's graduation from the MA in Media Arts, Games, and Health program.
