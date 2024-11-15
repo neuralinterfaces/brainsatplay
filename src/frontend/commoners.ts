@@ -9,28 +9,38 @@ const log = (data: any) => {
 
 
 const service = SERVICES.flask
+console.log('Service', service)
+
+// Ping for activity
+const ping = async (url) => {
+    await fetch(new URL('connected', url))
+        .then(res => res.json())
+        .then(payload => log({ source: 'Python', command: 'ping', payload }))
+}
+
+const pingUntilAvailable = async (url) => {
+    const id = setInterval(async () => {
+        await ping(url)
+        clearInterval(id)
+    }, 500)
+}
 
 // Check if the Python service is available
 if (service) {
 
     const pythonUrl = new URL(service.url) // Equivalent to commoners://flask
 
-    const runCommands = async () => {
-        fetch(new URL('connected', pythonUrl))
-            .then(res => res.json())
-            .then(payload => log({ source: 'Python', command: 'connected', payload }))
-            .catch(e => console.error('Failed to request from Python server', e))
-    }
-
     if (DESKTOP) {
-        service.onActive(runCommands)
+
+        // Ping until available
+        ping(pythonUrl).catch(() => pingUntilAvailable(pythonUrl))
 
         service.onClosed(() => {
             console.error('Python server was closed!')
         })
     }
 
-    else runCommands()
+    else ping(pythonUrl).catch(() => pingUntilAvailable(pythonUrl))
 
 }
 

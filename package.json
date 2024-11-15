@@ -13,10 +13,8 @@
   "scripts": {
     "start": "commoners --target desktop",
     "dev": "commoners",
-    "services": "commoners share",
     "build": "commoners build",
     "build:packages": "pnpm -r run build",
-    "build:services": "commoners build --target services",
     "build:desktop": "commoners build --target desktop",
     "build:mobile": "commoners build --target mobile",
     "launch": "commoners launch",
@@ -38,8 +36,8 @@
     "@capacitor/cli": "^6.1.0",
     "@capacitor/core": "^6.1.0",
     "@capacitor/ios": "^6.1.0",
-    "@commoners/bluetooth": "0.0.38",
-    "commoners": "0.0.47",
+    "@commoners/bluetooth": "0.0.52",
+    "commoners": "0.0.52",
     "vite-plugin-dts": "^3.9.1"
   }
 }
